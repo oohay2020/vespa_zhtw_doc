@@ -13,7 +13,7 @@ Vespa為Yahoo開源之搜尋引擎，有關討論相當稀少，相關教學就�
 - [文件與搜尋定義](./documents_and_search_definitions/README.md)
 
 - [寫入Vespa](./writing_to_vespa/README.md)
-- [查詢Vespa]
+- [查詢Vespa](./querying_vespa/README.md)
 - [排序與機器學習模型應用]
 
 - [開發應用與實務](./developing_applications_and_plugins/README.md)
