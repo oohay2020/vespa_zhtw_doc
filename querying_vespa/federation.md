@@ -32,6 +32,43 @@ Vespa的容器層允許多個資料來源組成共同一個搜尋服務體。
 </search>
 ```
 
+## 設定來源
+一個簡單的提供者可以用來產生很多種不同的結果。
+而怎麼實作及呈現，要用關鍵字`sources`。
+一個`source`是一個用來提供一個或多個提供者特定種類結果的搜尋鏈。
+範例如下：
+```xml
+<search>
+  <provider id="my-provider">
+    <searcher id="MyDataFetchingSearcher" bundle="my-bundle" />
+    <source id="web" />
+    <source id="java-api">
+      <searcher id="com.yahoo.example.JavaApiSearcher" />
+    </source>
+  </provider>
+```
+
+### 多個提供者卻只有一個來源的狀況
+
+## 邦化
+範例：
+```xml
+<search>
+  <provider id="my-provider">
+    <searcher id="MyDataFetchingSearcher" bundle="my-bundle" />
+    <source id="web" />
+    <source id="java-api">
+      <searcher id="com.yahoo.example.JavaApiSearcher" />
+    </source>
+  </provider>
+  <chain id="combined">
+    <federation id="combinator">
+      <source idref="web" />
+      <source idref="java-api" />
+    </federation>
+  </chain>
+```
+
 ## 參考
 1. [com.yahoo.search.federation JavaDoc](https://javadoc.io/static/com.yahoo.vespa/container-search/7.162.26/com/yahoo/search/federation/vespa/package-summary.html)
 > 不是我要吐槽，官方文件出來一個Error也是不簡單...
