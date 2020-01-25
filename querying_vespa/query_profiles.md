@@ -17,3 +17,16 @@ Vespa中的Query Profile以XML格式來撰寫，如下：
   <field name="unique">merchantid</field>
 </query-profile>
 ```
+
+## 裡面可以放什麼
+參數
+> 就肉身測試的結果，YQL設定似乎不行放在QueryProfile中。Query Profile可以幫忙暫存的參數屬於非必要之參數。
+
+## 放在哪
+Query Profile請務必放在`application/search/query-profile/`
+
+## 使用流程
+當想使用自行創建的Query Profile，請務必三步驟完成：
+1. 建立`<query_profile_name>.xml`
+2. 複製到目標`application/search/query-profile/`中
+3. 重新佈署`application`
