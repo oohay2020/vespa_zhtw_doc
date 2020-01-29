@@ -1,6 +1,6 @@
 # 客戶端資料輸入Vespa的API介紹
 ## 為什麼要用 vespa feeding client api ??
-vespa提供`vespa-http-client-jar-with-dependencies.jar`，可透過[java command line](##java command line模式)或是[java code](##java code模式)實作，優點包含：
+vespa提供`vespa-http-client-jar-with-dependencies.jar`，可透過[java command line](./vespa_feeding_client_api.md#java-command-line模式)或是[java code](vespa_feeding_client_api.md#java-code模式)實作，優點包含：
 + 使用HTTP 協定
 + 平行化寫入一個或多個Vespa clusters，且寫入順序不變
 + 可編程特性，且與vespa無相依性
@@ -52,8 +52,8 @@ $ java -jar $VESPA_HOME/lib/jars/vespa-http-client-jar-with-dependencies.jar --u
 </dependency>
 ```
 + 建立一個client實體
-  + 利用FeedClientFactory建立client實體，並實作一個result callback [sample code: SampleFileFeeder](##sample code)
-  + 盡可能在不同執行緒間，重複利用client實體 [sample code: SampleFileFeeder with thread](##sample code)
+  + 利用FeedClientFactory建立client實體，並實作一個result callback [sample code: SampleFileFeeder](vespa_feeding_client_api.md#sample-code)
+  + 盡可能在不同執行緒間，重複利用client實體 [sample code: SampleFileFeeder with thread](vespa_feeding_client_api.md#sample-code)
   + 使用結束後，記得關閉client實體
   
 + 準備寫入Vespa
