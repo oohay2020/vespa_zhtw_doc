@@ -99,8 +99,8 @@ STORE data INTO '$ENDPOINT' USING VespaStorage();
 
 > 透過`operation=put`定義寫入模式，`PUT`是預設值，其他還有`REMOVE、UPDATE`。 JSON Vespa types與Pig data types的對應表如下
 
->| Pig type     | JSON-Vespa type |
->| :------------ |:---------------|
+| Pig type     | JSON-Vespa type |
+| :------------ |:---------------|
 |int	|number
 |long	|number
 |float	|number
@@ -151,8 +151,8 @@ STORE data INTO '$ENDPOINT' USING VespaStorage();
 ```
 > 補充一下VespaStorage與VespaDocumentOperation可定義的參數有哪些
 
->|parameter|default|description|
->|:--------|:------|:----------|
+|parameter|default|description|
+|:--------|:------|:----------|
 |create-document-operation	|false|只有VespaStorage|
 |operation	|put|寫入vespa模式,還有`REMOVE、UPDATE`|
 |docid		| |定義document id 模板|
